@@ -1,0 +1,27 @@
+Algoritmo pruebaPseInt
+Definir a, b, c, d, m, promedio Como real
+
+leer a
+leer b
+leer c
+leer d
+
+si a < b y a < c y a < d Entonces
+	m <- a
+SiNo
+	si b < c y b < d Entonces
+		m <- b
+	SiNo
+		si c < d Entonces
+			m <- c
+		SiNo
+			m <- d
+		FinSi
+	FinSi
+FinSi
+
+promedio <- (a +b+c+d -m) / 3
+
+imprimir "La nota eliminada es: ", m," El promedio del resto es: " promedio
+
+FinAlgoritmo
