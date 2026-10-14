@@ -1,0 +1,24 @@
+algoritmo maximo_de_cinco
+
+variables
+   a arreglo [5] : entero
+   i, maximo : entero
+
+inicio
+   para i <- 1 hasta 5 hacer
+      imprimir "Ingrese el valor ", i, " = "
+      leer a[i]
+   finpara
+
+   // Suponemos que el primer elemento es el mayor
+   maximo <- a[1]
+
+   // Recorremos el arreglo buscando un valor mayor
+   para i <- 2 hasta 5 hacer
+      si a[i] > maximo entonces
+         maximo <- a[i]
+      finsi
+   finpara
+
+   imprimirln "El valor maximo de los 5 ingresados es: ", maximo
+fin
