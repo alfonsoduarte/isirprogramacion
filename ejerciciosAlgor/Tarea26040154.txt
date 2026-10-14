@@ -1,0 +1,28 @@
+Tarea26040154
+
+Factorial de un numero
+
+algoritmo factorial;
+
+variables
+    n, i, resultado : entero
+
+inicio
+    imprimir "Ingrese un numero entero no negativo: "
+    leer n
+
+    // Validacion del numero
+    si n < 0 entonces
+        imprimirln "Error: el factorial no existe para numeros negativos"
+    sino
+        // 0! = 1 por definicion
+        resultado <- 1
+
+        // Multiplicamos de 1 hasta n
+        para i <- 1 hasta n hacer
+            resultado <- resultado * i
+        finpara
+
+        imprimirln n, "! = ", resultado
+    finsi
+fin
