@@ -1,0 +1,19 @@
+algoritmo promedio_tres_calificaciones
+
+variables
+   c1, c2, c3, promedio : real
+
+inicio
+   imprimir "Ingrese la calificacion 1 = "
+   leer c1
+
+   imprimir "Ingrese la calificacion 2 = "
+   leer c2
+
+   imprimir "Ingrese la calificacion 3 = "
+   leer c3
+
+   promedio <- (c1 + c2 + c3) / 3
+
+   imprimirln "El promedio es: ", promedio
+fin
