@@ -1,0 +1,12 @@
+Recorre el arreglo comparando los valores para hallar el número mayor.
+
+   Pseudocódigo:
+   Funcion ObtenerMaximo(Arreglo, N):
+       maximo = Arreglo[0]
+       Para i desde 1 hasta N-1 hacer
+           Si Arreglo[i] > maximo entonces
+               maximo = Arreglo[i]
+           Fin Si
+       Fin Para
+       Retornar maximo
+   Fin Funcion
