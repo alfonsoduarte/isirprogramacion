@@ -1,0 +1,30 @@
+algoritmo busqueda_lineal
+
+variables
+   a arreglo [5] : entero
+   i, valor, pos : entero
+
+inicio
+   para i <- 1 hasta 5 hacer
+      imprimir "Ingrese el valor ", i, " = "
+      leer a[i]
+   finpara
+
+   imprimir "Valor a buscar: "
+   leer valor
+
+   pos <- 0
+   para i <- 1 hasta 5 hacer
+      si a[i] = valor entonces
+         pos <- i
+      finsi
+   finpara
+
+   si pos <> 0 entonces
+      imprimirln "El valor ", valor, " se encuentra en la posicion ", pos
+   finsi
+
+   si pos = 0 entonces
+      imprimirln "El valor ", valor, " no se encuentra en el arreglo"
+   finsi
+fin
