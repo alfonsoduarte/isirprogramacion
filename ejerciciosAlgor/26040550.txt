@@ -1,0 +1,48 @@
+algoritmo promedio_vector
+
+variables
+   i, N : entero
+   suma, mayor, menor, promedio : real
+   v arreglo [100] : real
+
+inicio
+
+   imprimir "Cuantos numeros desea ingresar (maximo 100)? "
+   leer N
+
+   mientras N < 1 OR N > 100 hacer
+      imprimir "Dato invalido. Debe estar entre 1 y 100: "
+      leer N
+   finmientras
+
+   para i <- 1 hasta N hacer
+      imprimir "Ingrese el dato ", i, ": "
+      leer v[i]
+   finpara
+
+   suma <- 0
+   mayor <- v[1]
+   menor <- v[1]
+
+   para i <- 1 hasta N hacer
+      suma <- suma + v[i]
+
+      si v[i] > mayor entonces
+         mayor <- v[i]
+      finsi
+
+      si v[i] < menor entonces
+         menor <- v[i]
+      finsi
+   finpara
+
+   promedio <- suma / N
+
+   imprimirln
+   imprimirln "Cantidad de datos leidos : ", N
+   imprimirln "El mayor                 : ", mayor
+   imprimirln "El menor                 : ", menor
+   imprimirln "La suma                  : ", suma
+   imprimirln "El promedio              : ", promedio
+
+fin
