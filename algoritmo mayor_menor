@@ -1,0 +1,45 @@
+algoritmo mayor_menor
+
+// Tarea: Encontrar el numero mayor y menor
+
+variables
+
+    numeros[5] : entero
+
+    mayor, menor, i : entero
+
+inicio
+
+    para i <- 1 hasta 5 hacer
+
+        imprimir "Ingrese el numero ", i, " = "
+
+        leer numeros[i]
+
+    finpara
+
+    mayor <- numeros[1]
+
+    menor <- numeros[1]
+
+    para i <- 2 hasta 5 hacer
+
+        si numeros[i] > mayor entonces
+
+            mayor <- numeros[i]
+
+        finsi
+
+        si numeros[i] < menor entonces
+
+            menor <- numeros[i]
+
+        finsi
+
+    finpara
+
+    imprimirln "Numero mayor: ", mayor
+
+    imprimirln "Numero menor: ", menor
+
+fin
