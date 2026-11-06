@@ -1,0 +1,43 @@
+algoritmo primos_en_arreglo
+
+funcion logico esPrimo( n: entero )
+variables
+   i : entero
+   primo : logico
+inicio
+   primo <- TRUE
+   si n < 2 entonces
+      primo <- FALSE
+   sino
+      i <- 2
+      mientras primo AND i * i <= n hacer
+         si n MOD i = 0 entonces
+            primo <- FALSE
+         finsi
+         i <- i + 1
+      finmientras
+   finsi
+   retornar primo
+fin
+
+variables
+   a arreglo [8] : entero
+   i, cuenta : entero
+
+inicio
+   para i <- 1 hasta 8 hacer
+      imprimir "Ingrese el valor ", i, " = "
+      leer a[i]
+   finpara
+
+   cuenta <- 0
+   imprimir "Primos: "
+   para i <- 1 hasta 8 hacer
+      si esPrimo( a[i] ) entonces
+         imprimir a[i], " "
+         cuenta <- cuenta + 1
+      finsi
+   finpara
+   imprimirln
+   imprimirln "Total de primos: ", cuenta
+fin

@@ -1,0 +1,52 @@
+algoritmo boleta_calificaciones
+
+funcion real promedio( c1: entero, c2: entero, c3: entero )
+variables
+   suma : entero
+inicio
+   suma <- c1 + c2 + c3
+   retornar suma / 3
+fin
+
+funcion logico aprobado( p: real )
+variables
+   r : logico
+inicio
+   si p >= 7 entonces
+      r <- TRUE
+   sino
+      r <- FALSE
+   finsi
+   retornar r
+fin
+
+variables
+   nombres arreglo [4] : cadena
+   M arreglo [4,3] : entero
+   i, j, aprob : entero
+   p : real
+
+inicio
+   para i <- 1 hasta 4 hacer
+      imprimir "Nombre del alumno ", i, " = "
+      leer nombres[i]
+      para j <- 1 hasta 3 hacer
+         imprimir "  Calificacion ", j, " = "
+         leer M[i,j]
+      finpara
+   finpara
+
+   aprob <- 0
+   para i <- 1 hasta 4 hacer
+      p <- promedio( M[i,1], M[i,2], M[i,3] )
+      imprimir nombres[i], ", promedio = ", p, " -> "
+      si aprobado( p ) entonces
+         imprimirln "APROBADO"
+         aprob <- aprob + 1
+      sino
+         imprimirln "REPROBADO"
+      finsi
+   finpara
+
+   imprimirln "Total de aprobados: ", aprob
+fin

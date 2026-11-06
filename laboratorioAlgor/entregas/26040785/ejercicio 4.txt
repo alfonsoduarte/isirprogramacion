@@ -1,0 +1,37 @@
+algoritmo diagonales_matriz
+
+funcion entero mayor( a: entero, b: entero )
+variables
+   m : entero
+inicio
+   si a > b entonces
+      m <- a
+   sino
+      m <- b
+   finsi
+   retornar m
+fin
+
+variables
+   v arreglo [3,3] : entero
+   i, j, sumaP, sumaS : entero
+
+inicio
+   para i <- 1 hasta 3 hacer
+      para j <- 1 hasta 3 hacer
+         imprimir "Valor [", i, ",", j, "] = "
+         leer v[i,j]
+      finpara
+   finpara
+
+   sumaP <- 0
+   sumaS <- 0
+   para i <- 1 hasta 3 hacer
+      sumaP <- sumaP + v[i,i]
+      sumaS <- sumaS + v[i,4-i]
+   finpara
+
+   imprimirln "Suma diagonal principal = ", sumaP
+   imprimirln "Suma diagonal secundaria = ", sumaS
+   imprimirln "La mayor es = ", mayor(sumaP, sumaS)
+fin

@@ -1,0 +1,28 @@
+algoritmo temperaturas_semana
+
+variables
+   t arreglo [7] : entero
+   i, suma, cuenta : entero
+   promedio : real
+
+inicio
+   suma <- 0
+   cuenta <- 0
+
+   para i <- 1 hasta 7 hacer
+      imprimir "Temperatura del dia ", i, " = "
+      leer t[i]
+      suma <- suma + t[i]
+   finpara
+
+   promedio <- suma / 7
+
+   para i <- 1 hasta 7 hacer
+      si t[i] > promedio entonces
+         cuenta <- cuenta + 1
+      finsi
+   finpara
+
+   imprimirln "Promedio = ", promedio
+   imprimirln "Dias por encima del promedio: ", cuenta
+fin

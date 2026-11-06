@@ -1,0 +1,51 @@
+algoritmo ventas_sucursales
+
+variables
+   v arreglo [3,4] : entero
+   totalFila arreglo [3] : entero
+   totalColumna arreglo [4] : entero
+   i, j, mayor, sucMayor : entero
+
+inicio
+   para i <- 1 hasta 3 hacer
+      para j <- 1 hasta 4 hacer
+         imprimir "Venta sucursal ", i, " trimestre ", j, " = "
+         leer v[i,j]
+      finpara
+   finpara
+
+   para i <- 1 hasta 3 hacer
+      totalFila[i] <- 0
+      para j <- 1 hasta 4 hacer
+         totalFila[i] <- totalFila[i] + v[i,j]
+      finpara
+   finpara
+
+   para j <- 1 hasta 4 hacer
+      totalColumna[j] <- 0
+      para i <- 1 hasta 3 hacer
+         totalColumna[j] <- totalColumna[j] + v[i,j]
+      finpara
+   finpara
+
+   mayor <- totalFila[1]
+   sucMayor <- 1
+   para i <- 2 hasta 3 hacer
+      si totalFila[i] > mayor entonces
+         mayor <- totalFila[i]
+         sucMayor <- i
+      finsi
+   finpara
+
+   imprimirln "Total por sucursal:"
+   para i <- 1 hasta 3 hacer
+      imprimirln "  Sucursal ", i, " = ", totalFila[i]
+   finpara
+
+   imprimirln "Total por trimestre:"
+   para j <- 1 hasta 4 hacer
+      imprimirln "  Trimestre ", j, " = ", totalColumna[j]
+   finpara
+
+   imprimirln "Sucursal con mas ventas: ", sucMayor, " (", mayor, ")"
+fin
